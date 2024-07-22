@@ -51,6 +51,7 @@ const sortOptions = [
 //   { name: 'Hip Bags', href: '#' },
 //   { name: 'Laptop Sleeves', href: '#' },
 // ]
+
 // const filters = [
 //   {
 //     id: 'color',
@@ -64,29 +65,29 @@ const sortOptions = [
 //       { value: 'purple', label: 'Purple', checked: false },
 //     ],
 //   },
-//   {
-//     id: 'category',
-//     name: 'Category',
-//     options: [
-//       { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-//       { value: 'sale', label: 'Sale', checked: false },
-//       { value: 'travel', label: 'Travel', checked: true },
-//       { value: 'organization', label: 'Organization', checked: false },
-//       { value: 'accessories', label: 'Accessories', checked: false },
-//     ],
-//   },
-//   {
-//     id: 'size',
-//     name: 'Size',
-//     options: [
-//       { value: '2l', label: '2L', checked: false },
-//       { value: '6l', label: '6L', checked: false },
-//       { value: '12l', label: '12L', checked: false },
-//       { value: '18l', label: '18L', checked: false },
-//       { value: '20l', label: '20L', checked: false },
-//       { value: '40l', label: '40L', checked: true },
-//     ],
-//   },
+//   // {
+//   //   id: 'category',
+//   //   name: 'Category',
+//   //   options: [
+//   //     { value: 'new-arrivals', label: 'New Arrivals', checked: false },
+//   //     { value: 'sale', label: 'Sale', checked: false },
+//   //     { value: 'travel', label: 'Travel', checked: true },
+//   //     { value: 'organization', label: 'Organization', checked: false },
+//   //     { value: 'accessories', label: 'Accessories', checked: false },
+//   //   ],
+//   // },
+//   // {
+//   //   id: 'size',
+//   //   name: 'Size',
+//   //   options: [
+//   //     { value: '2l', label: '2L', checked: false },
+//   //     { value: '6l', label: '6L', checked: false },
+//   //     { value: '12l', label: '12L', checked: false },
+//   //     { value: '18l', label: '18L', checked: false },
+//   //     { value: '20l', label: '20L', checked: false },
+//   //     { value: '40l', label: '40L', checked: true },
+//   //   ],
+//   // },
 // ]
 
 function classNames(...classes) {
@@ -99,7 +100,7 @@ export default function Product() {
   const navigate = useNavigate();
   const param = useParams();
   const dispatch = useDispatch();
-  const {product} = useSelector(store=>store);
+  const {products} = useSelector(store=>store);
 
   const decodedQueryString = decodeURIComponent(location.search);
   const searchParams = new URLSearchParams(decodedQueryString);
@@ -448,7 +449,8 @@ export default function Product() {
                 {/* Your content */}
 
                 <div className="flex flex-wrap justify-center bg-white py-5">
-                  {product.products?.content?.map((item) => (
+                  {/* {mens_kurta.map((item) => ( */}
+                  {products.products && products.products?.content?.map((item) => (
                     <ProductCard product={item} />
                   ))}
                 </div>

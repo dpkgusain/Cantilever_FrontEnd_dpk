@@ -27,13 +27,15 @@ const HomeSectionCarosel = ({ data, sectionName }) => {
       <h2 className="text-2xl font-extrabold text-gray-800 py-5">{sectionName}</h2>
       <div className="relative p-5">
         <AliceCarousel
-          items={items}
+        mouseTracking items={items} 
+          // items={items}
           // disableButtonsControls
           responsive={responsive}
           disableDotsControls
           onSlideChanged={syncActiveIndex}
           activeIndex={activeIndex}
         />
+
 
         {activeIndex !== items.length - 5 && (
           <Button
@@ -74,6 +76,7 @@ const HomeSectionCarosel = ({ data, sectionName }) => {
             />
           </Button>
         )}
+
       </div>
     </div>
   );

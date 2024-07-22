@@ -5,7 +5,7 @@ import { customerProductReducer } from "./Product/Reducer";
 
 const rootReducers = combineReducers({
     auth: authReducer,
-    product: customerProductReducer,
+    products: customerProductReducer,
 });
 
 export const store = legacy_createStore(rootReducers, applyMiddleware(thunk));
